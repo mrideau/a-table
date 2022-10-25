@@ -17,9 +17,11 @@
             @csrf
             <div class="row">
                 <div class="input-field col s12">
-                    <div>
-                        <img src="{{ url('storage/' . $recipe->image_path) }}" alt="Image de la recette}}">
-                    </div>
+                    @if(isset($recipe->image_path))
+                        <div>
+                            <img src="{{ url('storage/' . $recipe->image_path) }}" alt="Image de la recette}}">
+                        </div>
+                    @endif
                     <label>{{ __('image') }}</label>
                     <input id="image" name="image" type="file" class="validate">
                 </div>
@@ -42,6 +44,12 @@
                         @endforeach
                     </select>
                     <label>{{ __('category.categories') }}</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="description" name="description" class="materialize-textarea"></textarea>
+                        <label for="description">DESCRIPTION</label>
+                    </div>
                 </div>
             </div>
             <div>
