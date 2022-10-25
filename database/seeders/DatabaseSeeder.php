@@ -5,8 +5,6 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Recipe;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,15 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//        $this->call([
-//            CategorySeeder::class,
-//            RecipeSeeder::class
-//        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Matis',
-            'email' => 'matis.rideau@hotmail.com',
-            'password' => Hash::make('testpswd'),
+        $this->call([
+            UserSeeder::class
         ]);
 
         $categories = Category::factory(50)->create();
@@ -36,8 +27,5 @@ class DatabaseSeeder extends Seeder
             $recipe->categories()->attach($category->id);
             $recipe->save();
         }
-
-        // \App\Models\User::factory(10)->create();
-
     }
 }
