@@ -5,7 +5,9 @@
         <div class="parallax"><img src="{{ url('storage/'.$recipe->image_path) }}"></div>
     </div>
     <div class="container">
-        <a href="{{ route('recipes.edit', $recipe) }}" class="btn">{{ __('form.edit') }}</a>
+        @auth
+            <a href="{{ route('recipes.edit', $recipe) }}" class="btn">{{ __('form.edit') }}</a>
+        @endif
         <h1>{{ $recipe->name }}</h1>
         @foreach($recipe->categories as $category)
             <a href="{{ route('categories.show', $category) }}">{{ $category->name }}</a>
