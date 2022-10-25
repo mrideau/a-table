@@ -20,9 +20,11 @@ class LoginController extends Controller
 
         $credentials = $request->only('email', 'password');
 
+        // Vérification des données entrées
         if(Auth::attempt($credentials, isset($request->remember_me))) {
-            // Regeneration d'un session
+            // Regeneration d'une session
             $request->session()->regenerate();
+
             return redirect()->intended(route('home'))->with('message', __('auth.logged_in'));;
         }
 
