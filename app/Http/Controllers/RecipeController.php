@@ -92,30 +92,34 @@ class RecipeController extends Controller
      */
     public function update(StoreRecipeRequest $request, Recipe $recipe)
     {
-        // Mass Assign
+        // Assignation de masse
         $recipe->fill($request->all());
 
+        // Création et assignation du slug
         $recipe->slug = Str::slug($recipe->name);
 
-        // php artisan storage:link
         if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $fileName = time() . '.' . $image->getClientOriginalExtension();
+            $image = $request->file('image');
+            $fileName = time() . '.' . $image->getClientOriginalExtension();
 
 //            $img = Image::make($image->getRealPath());
 //            $img->resize(120, 120, function ($constraint) {
 //                $constraint->aspectRatio();
 //            });
 
-        if (Storage::exists($recipe->image_path)) {
-            Storage::delete($recipe->image_path);
+            // Si on avait une image existante on la supprime
+            if (Storage::exists($recipe->image_path)) {
+                Storage::delete($recipe->image_path);
+            }
+
+            // Stockage de l'image
+            $path = $request->image->storeAs('images', $fileName);
+
+            // Assignation du chemin de l'image enregistrée
+            $recipe->image_path = $path;
         }
 
-        $path = $request->image->storeAs('images', $fileName);
-
-        $recipe->image_path = $path;
-        }
-
+        // Enregistrement de la arecette
         $recipe->save();
 
         // Suppression des anciens liens
@@ -137,8 +141,9 @@ class RecipeController extends Controller
      */
     public function destroy(Recipe $recipe)
     {
-        Storage::delete($recipe->image_path);
-
+        if (Storage::exists($recipe->image_path)) {
+            Storage::delete($recipe->image_path);
+        }
         $recipe->categories()->detach();
         $recipe->deleteOrFail();
         return redirect()->route('home')->with(['message' => __('recipe.deleted')]);
