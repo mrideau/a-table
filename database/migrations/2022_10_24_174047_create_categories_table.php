@@ -6,10 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCategoriesTable extends Migration
 {
+//    CREATE TABLE categories (
+//        id BIGINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+//        name CHAR(255),
+//        slug CHAR(255),
+//        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+//        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+//    );
+
+//    CREATE TABLE category_recipe (
+//        recipe_id BIGINT UNSIGNED NOT NULL,
+//        category_id BIGINT UNSIGNED NOT NULL,
+//
+//        FOREIGN KEY (recipe_id) REFERENCES recipes(id),
+//        FOREIGN KEY (category_id) REFERENCES categories(id)
+//    );
+
     /**
-     * Run the migrations.
-     *
-     * @return void
+     * Lancer la migration.
      */
     public function up()
     {
@@ -24,16 +38,10 @@ class CreateCategoriesTable extends Migration
             $table->foreignId('recipe_id')->constrained('recipes');
             $table->foreignId('category_id')->constrained('categories');
         });
-
-//        Schema::table('recipes', function (Blueprint $table) {
-//            $table->foreignId('category_id')->constrained('categories');
-//        });
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
+     * Inversion de la migration.
      */
     public function down()
     {

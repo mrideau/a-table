@@ -6,10 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRecipesTable extends Migration
 {
+//    CREATE TABLE recipes (
+//        id BIGINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+//        name CHAR(255),
+//        slug CHAR(255),
+//        description TEXT,
+//        image_path CHAR(255),
+//        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+//        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+//    );
+
     /**
-     * Run the migrations.
-     *
-     * @return void
+     * Lancer la migration.
      */
     public function up()
     {
@@ -24,9 +32,7 @@ class CreateRecipesTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
+     * Inversion de la migration.
      */
     public function down()
     {
