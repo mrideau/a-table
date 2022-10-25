@@ -13,6 +13,10 @@ class Category extends Model
       'name'
     ];
 
+    protected $guarded = [
+        'slug'
+    ];
+
     public function getRouteKeyName()
     {
         return 'slug';
