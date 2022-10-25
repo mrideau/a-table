@@ -17,15 +17,15 @@ class ContactController extends Controller
     function contact(Request $request)
     {
         $request->validate([
-            'firstname' => ['required'],
-            'lastname' => ['required'],
+            'first_name' => ['required'],
+            'last_name' => ['required'],
             'email' => ['required'],
             'subject' => ['required'],
             'message' => ['required'],
         ]);
 
         $data = [
-            'firstname' => $request->firstname,
+            'first_name' => $request->first_name,
             'message' => $request->message,
             'email' => $request->email,
             'subject' => $request->subject,

@@ -22,6 +22,6 @@ class ContactValidationEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contact-validation')->from('ridemap@matis-dev.fr', 'RideMap')->subject('Confirmation de la réception de ton message !')->with('data', $this->data);
+        return $this->view('emails.contact-validation')->from('a-table@matis-dev.fr', 'A Table !')->subject('Confirmation de la réception de ton message !')->with('data', $this->data);
     }
 }

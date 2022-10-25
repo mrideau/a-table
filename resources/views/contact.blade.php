@@ -6,6 +6,7 @@
         <h1>Contact</h1>
         <p>Lorem</p>
         <form method="POST" action="{{ route('contact') }}" enctype="multipart/form-data">
+            @csrf
             <div class="row">
                 <div class="input-field col s6">
                     <input id="first_name" name="first_name" type="text" class="validate">
@@ -20,6 +21,18 @@
                 <div class="input-field col s12">
                     <input id="email" name="email" type="email" class="validate">
                     <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="subject" name="subject" type="text" class="validate">
+                    <label for="subject">Objet</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="message" name="message" class="materialize-textarea"></textarea>
+                    <label for="message">Message</label>
                 </div>
             </div>
             <button class="btn" type="submit">Envoyer</button>

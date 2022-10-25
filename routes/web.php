@@ -19,7 +19,9 @@ use \App\Http\Controllers\ContactController;
 */
 
 Route::get('/', [HomeController::class, 'show'])->name('home');
+
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::resource('/recettes', RecipeController::class)->names('recipes');
 Route::resource('/categories', CategoryController::class)->names('categories');
