@@ -23,11 +23,6 @@ class Recipe extends Model
         return 'slug';
     }
 
-    public function ingredients()
-    {
-        return $this->hasMany(Ingredient::class);
-    }
-
     public function categories()
     {
         return $this->belongsToMany(Category::class)->withPivot('category_id', 'recipe_id');
