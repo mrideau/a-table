@@ -24,8 +24,10 @@ class StoreRecipeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'categories' => 'required',
+            'name' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'categories' => ['required', 'array'],
+            'image' => ['image', 'mimes:jpg,bmp,png']
         ];
     }
 }
