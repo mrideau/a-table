@@ -11,7 +11,7 @@
            <div class="row">
                <div class="input-field col s12">
                    <input id="email" name="email" type="email" class="validate" value="{{ old('email') }}">
-                   <label for="email">{{ __('auth.email') }}*</label>
+                   <label for="email">{{ __('auth.email') }}</label>
                </div>
                @error('email')
                <p>{{ __($message) }}</p>
@@ -20,7 +20,7 @@
            <div class="row">
                <div class="input-field col s12">
                    <input id="password" name="password" type="password" class="validate">
-                   <label for="password">{{ __('auth.password') }}*</label>
+                   <label for="password">{{ __('auth.password') }}</label>
                </div>
                @error('password')
                <p>{{ __($message) }}</p>
