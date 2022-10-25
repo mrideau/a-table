@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    /**
+     * Affichage de la page d'accueil'
+     */
     public function show() {
+        // Récupeération des 3 dernières recettes
         $last_recipes = Recipe::orderBy('created_at', 'desc')->limit(3)->get();
-//        categories = Category::orderBy('created_at', 'desc')->limit(3)->get();
 
         return view('home', compact('last_recipes'));
     }

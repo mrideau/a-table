@@ -10,10 +10,16 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
+    /**
+     * Affichage de la page contact
+     */
     public function show() {
         return view('contact');
     }
 
+    /**
+     * Envoie des emails
+     */
     function contact(Request $request)
     {
         $request->validate([

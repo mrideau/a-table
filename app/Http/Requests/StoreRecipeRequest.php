@@ -7,9 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class StoreRecipeRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
+     * Détermner si l'utilisateur est autorisé à faire cette requête
      */
     public function authorize()
     {
@@ -17,9 +15,7 @@ class StoreRecipeRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
+     * Récupération des règles de validation qui s'appliquent à la requête
      */
     public function rules()
     {

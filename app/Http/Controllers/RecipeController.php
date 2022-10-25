@@ -12,13 +12,12 @@ class RecipeController extends Controller
 {
     public function __construct()
     {
+        // Restreindre création aux utilisateurs connectés
         $this->middleware('auth')->except('index', 'show');
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Affichage de liste des ressources
      */
     public function index()
     {
@@ -36,9 +35,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Affichage du formulaire de création
      */
     public function create()
     {
@@ -46,10 +43,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param \App\Http\Requests\StoreRecipeRequest $request
-     * @return \Illuminate\Http\Response
+     * Stockage de la nouvelle ressource
      */
     public function store(StoreRecipeRequest $request)
     {
@@ -61,10 +55,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\Recipe $recipe
-     * @return \Illuminate\Http\Response
+     * Affichage de la ressource
      */
     public function show(Recipe $recipe)
     {
@@ -72,10 +63,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Recipe $recipe
-     * @return \Illuminate\Http\Response
+     * Affichage du formulaire d'édition de la ressource
      */
     public function edit(Recipe $recipe = null)
     {
@@ -84,11 +72,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param \App\Http\Requests\UpdateRecipeRequest $request
-     * @param \App\Models\Recipe $recipe
-     * @return \Illuminate\Http\Response
+     * Mise à jour de la ressource
      */
     public function update(StoreRecipeRequest $request, Recipe $recipe)
     {
@@ -134,10 +118,7 @@ class RecipeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\Recipe $recipe
-     * @return \Illuminate\Http\Response
+     * Suppression de la ressource
      */
     public function destroy(Recipe $recipe)
     {
