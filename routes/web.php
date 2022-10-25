@@ -20,6 +20,14 @@ use \App\Http\Controllers\ContactController;
 
 Route::get('/', [HomeController::class, 'show'])->name('home');
 
+Route::get('/conditions-utilisation', function() {
+    return view('terms');
+})->name('terms');
+
+Route::get('/mentions-legales', function() {
+    return view('legals');
+})->name('legals');
+
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 

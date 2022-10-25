@@ -8,8 +8,8 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Liens utiles</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Conditions d'utilisations</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Mentions Légales</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{ route('terms') }}">Conditions d'utilisations</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{ route('legals') }}">Mentions Légales</a></li>
                 </ul>
             </div>
         </div>
