@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRecipeRequest;
-use App\Http\Requests\UpdateRecipeRequest;
 use App\Models\Category;
 use App\Models\Recipe;
 use Illuminate\Support\Facades\Storage;
@@ -24,7 +23,14 @@ class RecipeController extends Controller
     public function index()
     {
         // Customisation Pagination : https://laravel.com/docs/8.x/pagination#customizing-the-pagination-view
-        $recipes = Recipe::paginate();
+        $recipes = null;
+        $req = request('recette');
+
+        if ($req) {
+            $recipes = Recipe::where('name', 'Like', '%' . $req . '%')->paginate();
+        } else {
+            $recipes = Recipe::paginate();
+        }
 
         return view('recipes.index', compact('recipes'));
     }
@@ -92,8 +98,7 @@ class RecipeController extends Controller
         $recipe->slug = Str::slug($recipe->name);
 
         // php artisan storage:link
-//        if ($request->hasFile('image')) {
-//        $image = $request->file('image');
+        if ($request->hasFile('image')) {
         $image = $request->file('image');
         $fileName = time() . '.' . $image->getClientOriginalExtension();
 
@@ -109,7 +114,7 @@ class RecipeController extends Controller
         $path = $request->image->storeAs('images', $fileName);
 
         $recipe->image_path = $path;
-//        }
+        }
 
         $recipe->save();
 

@@ -27,7 +27,7 @@ class LoginController extends Controller
         }
 
         return back()->onlyInput('email')->withErrors([
-            'login' => __('login.error')
+            'login' => __('auth.login_error')
         ]);
     }
 

@@ -6,4 +6,5 @@ return [
     'save' => 'Enregistrer',
     'delete' => 'Supprimer',
     'edit' => 'Éditer',
+    'search' => 'Rechercher',
 ];
