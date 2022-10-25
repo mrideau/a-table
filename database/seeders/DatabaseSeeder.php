@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('testpswd'),
         ]);
 
-        $categories = Category::factory(5)->create();
-        $recipes = Recipe::factory(5)->create();
+        $categories = Category::factory(50)->create();
+        $recipes = Recipe::factory(500)->create();
 
         foreach ($recipes as $recipe) {
             $category = $categories->random();
