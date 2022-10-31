@@ -4,8 +4,8 @@
 
     <div class="hero" style="background-image: url('{{ asset('images/food01.jpg') }}')">
         <div class="hero-content">
-            <h1>A Table !</h1>
-            <h2 class="font">{{ __('general.catch_phrase') }}</h2>
+            <h1 class="text-shadow">A Table !</h1>
+            <h2 class="text-shadow flow-text">{{ __('general.catch_phrase') }}</h2>
             <a href="{{ route('recipes.index') }}" class="btn">{{ __('recipe.view_recipes') }}</a>
         </div>
     </div>
