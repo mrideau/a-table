@@ -52,6 +52,10 @@
         @yield('content')
     </main>
 
+    <div class="ontop">
+        <img src="{{ asset('svg/chevron-up-solid.svg') }}" aria-hidden>
+    </div>
+
     @include('layouts.footer')
 
     <!-- Scripts -->
@@ -61,10 +65,6 @@
             M.toast({html: '{{ session()->get('message') }}'})
         </script>
     @endif
-    <script>
-        // const instance = M.Modal.getInstance(document.querySelector('#cookies_modal'));
-        // instance.open();
-    </script>
     @stack('scripts')
 </body>
 </html>
