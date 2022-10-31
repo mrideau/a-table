@@ -19,6 +19,11 @@
         @endif
     </title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('images/favicon/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon/favicon-192x192.png') }}" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
