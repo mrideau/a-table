@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="description" content="A Table! vous proposer des recettes simples mais qui régaleront toute votre famille et vos amis !">
@@ -33,7 +33,7 @@
             <p>Pas de cookies</p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
     </div>
 
@@ -43,8 +43,6 @@
             <form method="GET" action="{{ route('recipes.index') }}">
                 <div class="input-field">
                     <input placeholder="{{ __('form.search') }}" id="search" type="search" required name="recette">
-                    {{--                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>--}}
-                    {{--                    <i class="material-icons">close</i>--}}
                 </div>
             </form>
         </div>
