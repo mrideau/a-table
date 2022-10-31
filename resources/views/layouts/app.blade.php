@@ -48,11 +48,9 @@
         </div>
     </div>
 
-    <div class="app">
-
+    <main class="app">
         @yield('content')
-
-    </div>
+    </main>
 
     @include('layouts.footer')
 

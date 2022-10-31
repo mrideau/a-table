@@ -3,7 +3,7 @@
 @section('title', __('recipe.recipes'))
 
 @section('content')
-    <div class="container">
+    <section class="container">
         <h1>Recettes</h1>
         @auth()
             <div class="row">
@@ -14,7 +14,7 @@
             @foreach($recipes as $recipe)
                 <div class="col s12 m6">
                     <a href="{{ route('recipes.show', $recipe) }}">
-                        <div class="card card-recipe hoverable">
+                        <article class="card card-recipe hoverable">
                             <div class="card-image">
                                 <img src="{{ url('storage/'.$recipe->image_path) }}" alt="{{ $recipe->name }}">
                                 <span class="card-title">{{ $recipe->name }}
@@ -27,7 +27,7 @@
                                     </div>
                                 </span>
                             </div>
-                        </div>
+                        </article>
                     </a>
                 </div>
             @endforeach
@@ -35,5 +35,5 @@
         <div class="row">
             {{ $recipes->links('vendor.pagination.default') }}
         </div>
-    </div>
+    </secti>
 @endsection

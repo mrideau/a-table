@@ -11,12 +11,12 @@
     </div>
 
     <div class="container">
-        <h2>{{ __('recipe.last_recipes') }}</h2>
-        <div class="row">
+        <h3>{{ __('recipe.last_recipes') }}</h3>
+        <section class="row">
             @foreach($last_recipes as $recipe)
                 <div class="col s12 m6">
                     <a href="{{ route('recipes.show', $recipe) }}">
-                        <div class="card card-recipe hoverable">
+                        <article class="card card-recipe hoverable">
                             <div class="card-image">
                                 <img
                                     src="{{ url('storage/' . $recipe->image_path) }}"
@@ -25,25 +25,27 @@
                                 >
                                 <h4 class="card-title">{{ $recipe->name }}</h4>
                             </div>
-                        </div>
+                        </article>
                     </a>
                 </div>
             @endforeach
-        </div>
+        </section>
 
-            <h2>{{ __('story.story') }}</h2>
-        <div class="card horizontal">
-            <div class="card-image">
-                <img class="avatar" src="{{ asset('images/colette.jpg') }}" alt="Photo Colette" loading="lazy">
-            </div>
-            <div class="card-content">
-                <p style="margin: 0">{{ __('story.description') }}</p>
-                <div style="margin-top: 1rem">
-                    <a class="btn" href="{{ route('recipes.index') }}">{{ __('recipe.recipes') }}</a>
-                    <a class="btn" href="{{ route('categories.index') }}">{{ __('category.categories') }}</a>
+        <section class="row">
+            <h3>{{ __('story.story') }}</h3>
+            <article class="card horizontal">
+                <div class="card-image">
+                    <img class="avatar" src="{{ asset('images/colette.jpg') }}" alt="Photo Colette" loading="lazy">
                 </div>
-            </div>
+                <div class="card-content">
+                    <p style="margin: 0">{{ __('story.description') }}</p>
+                    <div style="margin-top: 1rem">
+                        <a class="btn" href="{{ route('recipes.index') }}">{{ __('recipe.recipes') }}</a>
+                        <a class="btn" href="{{ route('categories.index') }}">{{ __('category.categories') }}</a>
+                    </div>
+                </div>
 
-        </div>
+            </article>
+        </section>
     </div>
 @endsection

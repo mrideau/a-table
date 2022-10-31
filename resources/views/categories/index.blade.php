@@ -3,7 +3,7 @@
 @section('title', __('category.categories'))
 
 @section('content')
-    <div class="container">
+    <section class="container">
         <h1>{{ __('category.categories') }}</h1>
         @auth()
             <div class="row">
@@ -21,5 +21,5 @@
                 @endif
             @endforeach
         </div>
-    </div>
+    </section>
 @endsection
