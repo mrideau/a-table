@@ -40,6 +40,6 @@ class ContactController extends Controller
         Mail::to($request->email)->send(new ContactValidationEmail($data));
         Mail::to('matis.rideau@hotmail.com')->send(new ContactEmail($data));
 
-        return back()->with('message', 'Email envoyé avec succès !');
+        return back()->with('message', __('contact.email_sent'));
     }
 }
