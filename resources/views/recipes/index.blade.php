@@ -5,6 +5,11 @@
 @section('content')
     <div class="container">
         <h1>Recettes</h1>
+        @auth()
+            <div class="row">
+                <a href="{{ route('recipes.create') }}" class="btn">{{ __('general.new') }}</a>
+            </div>
+        @endif
         <div class="row">
             @foreach($recipes as $recipe)
                 <div class="col s12 m6">

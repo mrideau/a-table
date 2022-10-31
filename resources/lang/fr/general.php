@@ -10,5 +10,6 @@ return [
     'message' => 'Message',
     'email' => 'Adresse Email',
     'send' => 'Envoyer',
-    'catch_phrase' => 'Trouver une recette n’a jamais été aussi simple.'
+    'catch_phrase' => 'Trouver une recette n’a jamais été aussi simple.',
+    'new' => 'Nouveau'
 ];
