@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="recipe-image" style="background-image: url('{{ url('storage/'.$recipe->image_path) }}') ">
-        <h1 class="white-text">{{ $recipe->name }}</h1>
+        <h1 class="white-text text-shadow">{{ $recipe->name }}</h1>
         <div class="row">
             @foreach($recipe->categories as $category)
                 <a href="{{ route('categories.show', $category) }}">
