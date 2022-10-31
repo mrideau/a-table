@@ -27,6 +27,29 @@
 <body>
     @include('layouts.header')
 
+    <div id="cookies_modal" class="modal">
+        <div class="modal-content">
+            <h4>Cookie</h4>
+            <p>Pas de cookies</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
+    <div id="search_modal" class="modal">
+        <div class="modal-content">
+            <h4>Rechercher</h4>
+            <form method="GET" action="{{ route('recipes.index') }}">
+                <div class="input-field">
+                    <input placeholder="{{ __('form.search') }}" id="search" type="search" required name="recette">
+                    {{--                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>--}}
+                    {{--                    <i class="material-icons">close</i>--}}
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="app">
 
         @yield('content')
@@ -42,6 +65,10 @@
             M.toast({html: '{{ session()->get('message') }}'})
         </script>
     @endif
+    <script>
+        // const instance = M.Modal.getInstance(document.querySelector('#cookies_modal'));
+        // instance.open();
+    </script>
     @stack('scripts')
 </body>
 </html>

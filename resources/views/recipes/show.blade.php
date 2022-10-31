@@ -1,17 +1,24 @@
 @extends('layouts.app')
 
+@section('title', $recipe->name)
+
 @section('content')
-    <div class="parallax-container">
-        <div class="parallax"><img src="{{ url('storage/'.$recipe->image_path) }}"></div>
-    </div>
-    <div class="container">
+    <div class="recipe-image" style="background-image: url('{{ url('storage/'.$recipe->image_path) }}') ">
+        <h1 class="white-text">{{ $recipe->name }}</h1>
+        <div class="row">
+            @foreach($recipe->categories as $category)
+                <a href="{{ route('categories.show', $category) }}">
+                    <span class="chip">
+                        {{ $category->name }}
+                    </span>
+                </a>
+            @endforeach
+        </div>
         @auth
             <a href="{{ route('recipes.edit', $recipe) }}" class="btn">{{ __('form.edit') }}</a>
         @endif
-        <h1>{{ $recipe->name }}</h1>
-        @foreach($recipe->categories as $category)
-            <a href="{{ route('categories.show', $category) }}">{{ $category->name }}</a>
-        @endforeach
-        <p>{{ $recipe->description }}</p>
+    </div>
+    <div class="container">
+        <p class="flow-text">{{ $recipe->description }}</p>
     </div>
 @endsection

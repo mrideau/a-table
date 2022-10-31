@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function show() {
         // Récupeération des 3 dernières recettes
-        $last_recipes = Recipe::orderBy('created_at', 'desc')->limit(3)->get();
+        $last_recipes = Recipe::orderBy('created_at', 'desc')->limit(2)->get();
 
         return view('home', compact('last_recipes'));
     }
