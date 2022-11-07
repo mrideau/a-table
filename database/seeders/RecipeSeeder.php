@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\DB;
 class RecipeSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     *
-     * @return void
+     * Execution du seeder
      */
     public function run()
     {

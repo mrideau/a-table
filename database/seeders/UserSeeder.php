@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class UserSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     *
-     * @return void
+     * Execution du seeder
      */
     public function run()
     {
