@@ -23,7 +23,7 @@
                                     alt="Image de {{ $recipe->name }}"
                                     loading="lazy"
                                 >
-                                <h4 class="card-title">{{ $recipe->name }}</h4>
+                                <h4 class="card-title text-shadow">{{ $recipe->name }}</h4>
                             </div>
                         </article>
                     </a>

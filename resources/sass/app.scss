@@ -1,14 +1,36 @@
 /* Materialize */
-$primary-color: #CE4257;
-$button-flat-color: #42CF5E;
-$button-floating-background: #42CF5E;
-$button-raised-background: #42CF5E;
+//$primary-color: #CE4257;
 
+$primary-color: #FFFFFF;
+$secondary-color: #42CF5E;
+
+// Buttons
+$button-flat-color: $secondary-color;
+$button-floating-background: $secondary-color;
+$button-raised-background: $secondary-color;
+
+// Chip
 $chip-bg-color: #42CF5E;
 
+// Footer
+$footer-bg-color: #2A2A2A;
+
+// Navbar
 $navbar-height-mobile: 64px;
+$navbar-font-color: #2A2A2A;
+
+$font-stack: 'Open Sans', 'Playfair Display', 'Helvetica Neue', sans-serif;
+$titles-font-stack: 'Playfair Display', serif;
 
 @import '~materialize-css/sass/materialize.scss';
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $titles-font-stack;
+
+    * {
+        font-family: $font-stack;
+    }
+}
 
 html {
     scroll-behavior: smooth;
@@ -24,7 +46,7 @@ html {
     position: fixed;
     right: 1rem;
     bottom: 1rem;
-    padding: 0.1rem;
+    padding: 0.15rem;
     border-radius: 2px;
     background-color: $primary-color;
     box-shadow: 0 0 15px rgba(black, 0.2);
@@ -143,4 +165,10 @@ html {
 
 .text-shadow {
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.pagination {
+    > .active {
+        color: $secondary-color;
+    }
 }

@@ -1,6 +1,4 @@
 <header class="header">
-
-
     <nav class="nav">
         <div class="nav-wrapper">
             <a href="/" class="brand-logo">

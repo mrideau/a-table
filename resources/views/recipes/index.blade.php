@@ -17,15 +17,15 @@
                         <article class="card card-recipe hoverable">
                             <div class="card-image">
                                 <img src="{{ url('storage/'.$recipe->image_path) }}" alt="{{ $recipe->name }}">
-                                <span class="card-title">{{ $recipe->name }}
-                                    <div>
+                                <h4 class="card-title text-shadow">{{ $recipe->name }}
+                                    <div style="margin-top: 0.2rem">
                                         @foreach($recipe->categories as $category)
                                             <span class="chip">
                                             {{ $category->name }}
                                         </span>
                                         @endforeach
                                     </div>
-                                </span>
+                                </h4>
                             </div>
                         </article>
                     </a>
@@ -35,5 +35,5 @@
         <div class="row">
             {{ $recipes->links('vendor.pagination.default') }}
         </div>
-    </secti>
+    </section>
 @endsection

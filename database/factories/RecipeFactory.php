@@ -8,9 +8,7 @@ use Illuminate\Support\Str;
 class RecipeFactory extends Factory
 {
     /**
-     * Define the model's default state.
-     *
-     * @return array
+     * Definition des status du modèle
      */
     public function definition()
     {

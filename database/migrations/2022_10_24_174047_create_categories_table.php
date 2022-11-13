@@ -8,8 +8,8 @@ class CreateCategoriesTable extends Migration
 {
 //    CREATE TABLE categories (
 //        id BIGINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-//        name CHAR(255),
-//        slug CHAR(255),
+//        name VARCHAR(255),
+//        slug VARCHAR(255),
 //        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 //        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 //    );
