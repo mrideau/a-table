@@ -51,7 +51,7 @@
             </div>
             <div class="row">
                 @if($errors->any())
-                    {!! implode('', $errors->all('<div style="color: red;">:message</div>')) !!}
+                    {!! implode('', $errors->all('<div>:message</div>')) !!}
                 @endif
             <div/>
             <div class="row">
