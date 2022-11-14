@@ -19,6 +19,6 @@
         @endif
     </div>
     <div class="container">
-        <p class="flow-text">{{ $recipe->description }}</p>
+        <p class="flow-text" style="white-space: break-spaces;">{{ $recipe->description }}</p>
     </div>
 @endsection
