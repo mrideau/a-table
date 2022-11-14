@@ -23,7 +23,7 @@ class StoreRecipeRequest extends FormRequest
             'name' => ['required', 'string'],
             'description' => ['required', 'string'],
             'categories' => ['required', 'array'],
-            'image' => ['image', 'mimes:jpg,bmp,png']
+            'image' => ['required', 'image', 'mimes:jpg,bmp,png']
         ];
     }
 }

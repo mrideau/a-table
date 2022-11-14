@@ -82,26 +82,19 @@ class RecipeController extends Controller
         // Création et assignation du slug
         $recipe->slug = Str::slug($recipe->name);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $fileName = time() . '.' . $image->getClientOriginalExtension();
+        $image = $request->file('image');
+        $fileName = time() . '.' . $image->getClientOriginalExtension();
 
-//            $img = Image::make($image->getRealPath());
-//            $img->resize(120, 120, function ($constraint) {
-//                $constraint->aspectRatio();
-//            });
-
-            // Si on avait une image existante on la supprime
-            if (Storage::exists($recipe->image_path)) {
-                Storage::delete($recipe->image_path);
-            }
-
-            // Stockage de l'image
-            $path = $request->image->storeAs('images', $fileName);
-
-            // Assignation du chemin de l'image enregistrée
-            $recipe->image_path = $path;
+        // Si on avait une image existante on la supprime
+        if (Storage::exists($recipe->image_path)) {
+            Storage::delete($recipe->image_path);
         }
+
+        // Stockage de l'image
+        $path = $request->image->storeAs('images', $fileName);
+
+        // Assignation du chemin de l'image enregistrée
+            $recipe->image_path = $path;
 
         // Enregistrement de la arecette
         $recipe->save();
@@ -125,6 +118,7 @@ class RecipeController extends Controller
         if (Storage::exists($recipe->image_path)) {
             Storage::delete($recipe->image_path);
         }
+        
         $recipe->categories()->detach();
         $recipe->deleteOrFail();
         return redirect()->route('home')->with(['message' => __('recipe.deleted')]);
