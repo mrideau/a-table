@@ -49,7 +49,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('categories.show', compact('category'));
+        $recipes = $category->recipes()->paginate();
+        return view('categories.show', compact('category', 'recipes'));
     }
 
     /**
@@ -79,7 +80,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        $category->categories()->detach();
+        $category->recipes()->detach();
         $category->deleteOrFail();
         return redirect()->route('home')->with(['message' => __('category.deleted')]);
     }

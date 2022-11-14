@@ -9,7 +9,7 @@
         @endif
         <h1>{{ $category->name }}</h1>
         <div class="row">
-            @foreach($category->recipes as $recipe)
+            @foreach($recipes as $recipe)
                 <div class="col s12 m6">
                     <a href="{{ route('recipes.show', $recipe) }}">
                         <div class="card card-recipe hoverable">
@@ -29,6 +29,9 @@
                     </a>
                 </div>
             @endforeach
+        </div>
+        <div class="row">
+            {{ $recipes->links('vendor.pagination.default') }}
         </div>
     </div>
 @endsection
