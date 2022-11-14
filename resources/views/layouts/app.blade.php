@@ -63,7 +63,7 @@
     </main>
 
     <div class="ontop">
-        <img src="{{ asset('svg/chevron-up-solid.svg') }}" aria-hidden>
+        <img src="{{ asset('svg/chevron-up-solid.svg') }}" alt="Flèche bouton ontop">
     </div>
 
     @include('layouts.footer')
@@ -78,10 +78,3 @@
     @stack('scripts')
 </body>
 </html>
-
-<h1>...</h1>
-<h2>...</h2>
-<h3>...</h3>
-<h4>...</h4>
-<h5>...</h5>
-<h6>...</h6>
