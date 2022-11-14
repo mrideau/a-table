@@ -32,7 +32,9 @@
                    <span>{{ __('auth.remember_me') }}</span>
                </label>
            </div>
-           <button class="btn" type="submit">{{ __('auth.login') }}</button>
+           <div class="row">
+               <button class="btn" type="submit">{{ __('auth.login') }}</button>
+           </div>
        </form>
    </div>
 @endsection
