@@ -20,7 +20,7 @@
                 <div class="input-field col s12">
                     @if(isset($recipe->image_path))
                         <div>
-                            <img src="{{ url('storage/' . $recipe->image_path) }}" alt="Image de la recette}}" style="width: 200px;">
+                            <img src="{{ url('storage/' . $recipe->image_path) }}" alt="Image de la recette" style="width: 200px;">
                         </div>
                     @endif
                     <input id="image" name="image" type="file" class="validate">
@@ -44,25 +44,25 @@
                     </select>
                     <label>{{ __('category.categories') }}</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="description" name="description" class="materialize-textarea">{{ $recipe->description ?? old('description') }}</textarea>
-                        <label for="description">{{ __('general.description') }}</label>
-                    </div>
+                <div class="input-field col s12">
+                    <textarea id="description" name="description" class="materialize-textarea">{{ $recipe->description ?? old('description') }}</textarea>
+                    <label for="description">{{ __('general.description') }}</label>
                 </div>
             </div>
-            <div>
+            <div class="row">
                 @if($errors->any())
-                    {{ implode('', $errors->all('<div>:message</div>')) }}
+                    {!! implode('', $errors->all('<div style="color: red;">:message</div>')) !!}
+                @endif
+            <div/>
+            <div class="row">
+                <a class="btn" href="/">{{ __('form.cancel') }}</a>
+                @if(isset($recipe))
+                    <button class="btn" type="submit" form="update_form">{{ __('form.update') }}</button>
+                    <button class="btn" type="submit" form="delete_form">{{ __('form.delete') }}</button>
+                @else
+                    <button class="btn" type="submit" form="create_form">{{ __('form.save') }}</button>
                 @endif
             </div>
-            <a class="btn" href="/">{{ __('form.cancel') }}</a>
-            @if(isset($recipe))
-                <button class="btn" type="submit" form="update_form">{{ __('form.update') }}</button>
-                <button class="btn" type="submit" form="delete_form">{{ __('form.delete') }}</button>
-            @else
-                <button class="btn" type="submit" form="create_form">{{ __('form.save') }}</button>
-            @endif
         </form>
     </div>
 @endsection

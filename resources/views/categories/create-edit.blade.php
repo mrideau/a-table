@@ -21,13 +21,20 @@
                     <label for="name">{{ __('category.name') }}</label>
                 </div>
             </div>
-            <a class="btn" href="/">{{ __('form.cancel') }}</a>
-            @if(isset($category))
-                <button class="btn" type="submit" form="update_form">{{ __('form.update') }}</button>
-                <button class="btn" type="submit" form="delete_form">{{ __('form.delete') }}</button>
-            @else
-                <button class="btn" type="submit" form="create_form">{{ __('form.save') }}</button>
-            @endif
+            <div class="row text-accent-1">
+                @if($errors->any())
+                    {!! implode('', $errors->all('<div style="color: red;">:message</div>')) !!}
+                @endif
+            <div/>
+            <div class="row">
+                <a class="btn" href="/">{{ __('form.cancel') }}</a>
+                @if(isset($category))
+                    <button class="btn" type="submit" form="update_form">{{ __('form.update') }}</button>
+                    <button class="btn" type="submit" form="delete_form">{{ __('form.delete') }}</button>
+                @else
+                    <button class="btn" type="submit" form="create_form">{{ __('form.save') }}</button>
+                @endif
+            </div>
         </form>
     </div>
 @endsection
