@@ -2,7 +2,7 @@
     <nav class="nav">
         <div class="nav-wrapper">
             <a href="/" class="brand-logo">
-                <img class="logo" src="{{ asset('images/logo.png') }}" alt="Site Logo" height="58px"/>
+                <img class="logo" src="{{ asset('images/logo.png') }}" alt="Site Logo" width="52" height="58"/>
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <img class="burger" alt="Burger menu" src="{{ asset('svg/bars-solid.svg') }}"/>
