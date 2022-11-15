@@ -5,7 +5,7 @@
                 <img class="logo" src="{{ asset('images/logo.png') }}" alt="Site Logo" height="58px"/>
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                <img class="burger" aria-hidden src="{{ asset('svg/bars-solid.svg') }}"/>
+                <img class="burger" alt="Burger menu" src="{{ asset('svg/bars-solid.svg') }}"/>
             </a>
             <ul class="right hide-on-med-and-down">
                 <li><a class="btn modal-trigger" href="#search_modal">Rechercher</a></li>
