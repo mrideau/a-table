@@ -35,5 +35,5 @@ Route::resource('/recettes', RecipeController::class)->names('recipes');
 Route::resource('/categories', CategoryController::class)->names('categories');
 
 Route::get('/connexion', [LoginController::class, 'show'])->name('auth.login');
-Route::post('/connexion', [LoginController::class, 'login'])->name('auth.login');
+Route::post('/connexion', [LoginController::class, 'login'])->name('auth.login')->middleware("throttle:5,5");
 Route::get('/deconnexion', [LoginController::class, 'logout'])->name('auth.logout');
